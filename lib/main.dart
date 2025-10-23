@@ -19,8 +19,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      themeMode: ThemeMode.light,
-      // themeMode: ThemeMode.dark,
+      // themeMode: ThemeMode.light,
+      themeMode: ThemeMode.dark,
 
       // 기본 테마
       theme: ThemeData(

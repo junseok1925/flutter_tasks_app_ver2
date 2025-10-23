@@ -99,9 +99,8 @@ class _HomePageState extends State<HomePage> {
       },
       child: Scaffold(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-
-        // resizeToAvoidBottomInset:
-        //     false, // 키보드 올라와도 FloatingActionButton 고정 true면 미세하게 키보드와 함께 올라옴
+        // 키보드 올라와도 FloatingActionButton 고정 true면 미세하게 키보드와 함께 올라옴
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(title: Text('준석`s Todo')),
         // 할 일 목록 리스트 생성 ( 만약 할 일 목록(todoList)이 비었다면 addTodoWidget 위젯 보여주기)
         body: todoList.isEmpty
