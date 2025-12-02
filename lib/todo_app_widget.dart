@@ -4,9 +4,15 @@ import 'package:flutter/material.dart';
 class AddTodoWidget extends StatelessWidget {
   final String titleText = '준석`s Todo';
   final VoidCallback onCreate;
-  final TextEditingController controller;
+  final TextEditingController titleController;
+  final TextEditingController contentController;
 
-  const AddTodoWidget({super.key, required this.onCreate, required this.controller});
+  const AddTodoWidget({
+    super.key,
+    required this.onCreate,
+    required this.titleController,
+    required this.contentController,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +46,7 @@ class AddTodoWidget extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         TextField(
-                          controller: controller,
+                          controller: titleController,
                           autofocus: true,
                           style: const TextStyle(
                             fontSize: 14,
@@ -51,7 +57,27 @@ class AddTodoWidget extends StatelessWidget {
                             Navigator.pop(context);
                           },
                           decoration: InputDecoration(
-                            hintText: "새 할 일",
+                            hintText: "새 할 일(제목)",
+                            contentPadding: EdgeInsets.symmetric(
+                              horizontal: 10,
+                            ),
+                            hintStyle: TextStyle(color: Colors.grey),
+                            border: InputBorder.none,
+                          ),
+                        ),
+                        TextField(
+                          controller: contentController,
+                          autofocus: true,
+                          style: const TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          onSubmitted: (title) {
+                            onCreate();
+                            Navigator.pop(context);
+                          },
+                          decoration: InputDecoration(
+                            hintText: "새 할 일(내용)",
                             contentPadding: EdgeInsets.symmetric(
                               horizontal: 10,
                             ),

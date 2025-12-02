@@ -33,9 +33,10 @@ class TodoRepository {
     );
   }
 
-  Future<void> addTodo(String title) async {
+  Future<void> addTodo(String title, String content) async {
     await _collection.add({
       'title': title,
+      'content': content,
       'isDone': false,
       'createdAt': DateTime.now().toIso8601String(),
     });

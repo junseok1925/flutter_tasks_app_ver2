@@ -18,6 +18,14 @@ class TodoViewModel extends ChangeNotifier {
   String? errorMessage;
   DocumentSnapshot? _lastDoc;
 
+  Todo? getTodoById(String id) {
+    try {
+      return todos.firstWhere((todo) => todo.id == id);
+    } catch (_) {
+      return null;
+    }
+  }
+
   Future<void> loadInitial() async {
     if (isLoading) return;
     isLoading = true;
@@ -36,7 +44,7 @@ class TodoViewModel extends ChangeNotifier {
     isLoadingMore = true;
     notifyListeners();
     // 데이터 불러오는 시간을 좀 더 느리게 해서 로딩 중인 상태를 체감 할 수 있도록 함
-    await Future.delayed(const Duration(milliseconds: 1500));
+    await Future.delayed(const Duration(milliseconds: 2000));
     await _loadPage(reset: false);
     isLoadingMore = false;
     notifyListeners();
@@ -61,10 +69,13 @@ class TodoViewModel extends ChangeNotifier {
     }
   }
 
-  Future<void> addTodo(String title) async {
+  Future<void> addTodo(String title, String content) async {
     final newTitle = title.trim();
+    final newContent = content.trim();
+
     if (newTitle.isEmpty) return;
-    await _repository.addTodo(newTitle);
+
+    await _repository.addTodo(newTitle, newContent);
     await loadInitial();
   }
 

@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tasks_app_ver2/firebase_options.dart';
 import 'package:flutter_tasks_app_ver2/home_page.dart';
+import 'package:flutter_tasks_app_ver2/router.dart';
 import 'package:flutter_tasks_app_ver2/theme.dart';
 import 'package:flutter_tasks_app_ver2/viewmodels/todo_view_model.dart';
 import 'package:provider/provider.dart';
@@ -25,11 +26,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => TodoViewModel(repository: TodoRepository())..loadInitial(),
-      child: MaterialApp(
+      child: MaterialApp.router(
         themeMode: ThemeMode.light,
         theme: lightTheme,
         darkTheme: darkTheme,
-        home: HomePage(),
+        routerConfig: router,
       ),
     );
   }
