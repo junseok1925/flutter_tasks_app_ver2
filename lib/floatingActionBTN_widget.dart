@@ -3,10 +3,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class FloatingActionBTNWidget extends StatelessWidget {
-  VoidCallback onCreate;
-  TextEditingController controller = TextEditingController();
+  final VoidCallback onCreate;
+  final TextEditingController controller;
 
-  FloatingActionBTNWidget({required this.onCreate, required this.controller});
+  const FloatingActionBTNWidget(
+      {super.key, required this.onCreate, required this.controller});
 
   @override
   Widget build(BuildContext context) {

@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class addTodoWidget extends StatelessWidget {
-  String titleText = '준석`s Todo';
-  VoidCallback onCreate;
-  TextEditingController controller = TextEditingController();
+class AddTodoWidget extends StatelessWidget {
+  final String titleText = '준석`s Todo';
+  final VoidCallback onCreate;
+  final TextEditingController controller;
 
-  addTodoWidget({required this.onCreate, required this.controller});
+  const AddTodoWidget({super.key, required this.onCreate, required this.controller});
 
   @override
   Widget build(BuildContext context) {
