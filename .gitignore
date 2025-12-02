@@ -1,45 +1,87 @@
-# Miscellaneous
-*.class
-*.log
-*.pyc
-*.swp
+# ================================
+# OS / General
+# ================================
 .DS_Store
-.atom/
-.build/
-.buildlog/
-.history
-.svn/
-.swiftpm/
-migrate_working_dir/
+*.log
+*.swp
+*.class
+*.pyc
+*.pyo
+*.tmp
 
-# IntelliJ related
+# ================================
+# IDE / Editor
+# ================================
+.idea/
 *.iml
 *.ipr
 *.iws
-.idea/
 
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-#.vscode/
+.atom/
+.history
+.svn/
+.swiftpm/
 
-# Flutter/Dart/Pub related
-**/doc/api/
-**/ios/Flutter/.last_build_id
+# VSCode 설정(공유 원하면 주석 해제)
+# .vscode/
+
+# ================================
+# Dart / Flutter
+# ================================
 .dart_tool/
+.flutter-plugins
 .flutter-plugins-dependencies
+.packages
 .pub-cache/
 .pub/
 /build/
+**/doc/api/
+
+# Flutter iOS
+**/ios/Flutter/.last_build_id
+**/ios/ServiceDefinitions.json
+
+# Flutter Coverage
 /coverage/
 
-# Symbolication related
-app.*.symbols
-
-# Obfuscation related
-app.*.map.json
-
-# Android Studio will place build artifacts here
+# ================================
+# Android / Gradle
+# ================================
 /android/app/debug
 /android/app/profile
 /android/app/release
+/android/.gradle/
+/android/local.properties
+
+# Firebase-related (Android)
+/android/app/google-services.json
+
+# ================================
+# Firebase / iOS
+# ================================
+# Firebase iOS 플러그인과 빌드 산출물
+**/ios/Pods/
+**/ios/Podfile.lock
+**/ios/.symlinks/
+/ios/Flutter/Flutter.podspec
+**/ios/firebase_app_id_file.json
+
+# Firebase iOS 설정 파일
+ios/Runner/GoogleService-Info.plist
+
+# ================================
+# Firebase CLI / Emulator
+# ================================
+.firebase/
+firebase.json
+firebaserc
+
+# Emulator data
+firebase-debug.log
+.emulator-data/
+
+# ================================
+# Symbolication / Obfuscation
+# ================================
+app.*.symbols
+app.*.map.json
