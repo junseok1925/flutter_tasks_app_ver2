@@ -73,8 +73,8 @@ class FloatingActionBTNWidget extends StatelessWidget {
                   const SizedBox(height: 12),
                   Row(
                     children: [
-                      Icon(Icons.short_text_rounded, size: 30),
-                      SizedBox(width: 20),
+                      // Icon(Icons.short_text_rounded, size: 30),
+                      SizedBox(width: 10),
                       Icon(Icons.star_border, size: 30),
                       Spacer(),
                       TextButton(

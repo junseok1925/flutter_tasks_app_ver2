@@ -54,9 +54,9 @@ class AppThemeExtension extends ThemeExtension<AppThemeExtension> {
 /// 라이트 모드용 테마 확장
 class LightTheme extends AppThemeExtension {
   LightTheme({
-    super.main = Colors.red, // 핵심 색상
-    super.mainLight = const Color(0xAAFF0000), // main 연한 버전
-    super.sub = const Color(0xFFFFF000), // 서브 색상
+    super.main = Colors.blue, // 핵심 색상
+    super.mainLight = Colors.blueAccent, // main 연한 버전
+    super.sub = Colors.white, // 서브 색상
     super.background = Colors.white, // 배경 색상
   });
 }
@@ -64,9 +64,9 @@ class LightTheme extends AppThemeExtension {
 /// 다크 모드용 테마 확장
 class DarkTheme extends AppThemeExtension {
   DarkTheme({
-    super.main = const Color(0xFF0000FF), // 핵심 색상
-    super.mainLight = const Color(0xAA0000FF), // main 연한 버전
-    super.sub = const Color(0xFFFF00FF), // 서브 색상
+    super.main = Colors.grey, // 핵심 색상
+    super.mainLight = Colors.black38, // main 연한 버전
+    super.sub = Colors.black, // 서브 색상
     super.background = Colors.black, // 배경 색상
   });
 }

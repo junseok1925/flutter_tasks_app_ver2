@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tasks_app_ver2/theme.dart';
 
 class TodoWidget extends StatelessWidget {
   const TodoWidget({
@@ -31,8 +32,8 @@ class TodoWidget extends StatelessWidget {
               height: 30,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                border: Border.all(color: Theme.of(context).dividerColor),
-                color: isDone ? Theme.of(context).iconTheme.color : null,
+                border: Border.all(color: Colors.black12),
+                color: isDone ? context.appColor.main : null,
               ),
               child: isDone
                   ? Icon(Icons.check, color: Colors.white, size: 16)

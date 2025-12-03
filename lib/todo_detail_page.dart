@@ -47,8 +47,8 @@ class TodoDetailPage extends StatelessWidget {
                           size: 28,
                         )
                       : Icon(
-                          Icons.check_circle_outline,
-                          color: Colors.grey,
+                          Icons.check_circle,
+                          color: context.appColor.sub,
                           size: 28,
                         ),
                   // todo.isDone ? Icons.check_circle : Icons.check_circle_outline,
@@ -56,8 +56,6 @@ class TodoDetailPage extends StatelessWidget {
                   // size: 28,
                 ),
                 IconButton(
-                  padding: EdgeInsets.zero,
-                  constraints: BoxConstraints(),
                   icon: Icon(Icons.delete, size: 22, color: Colors.red),
                   onPressed: () async {
                     await context.read<TodoViewModel>().deleteTodo(todo.id);
